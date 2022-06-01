@@ -4,11 +4,12 @@ import "./style.css";
 
 const canvas = document.getElementById("canvas");
 const undoButton = document.getElementById("undo");
+const canvasImage = document.getElementById("canvas-image");
 const createImageButton = document.getElementById("create-image");
 const drawWidthRange = document.getElementById("draw-width-range");
 
-canvas.width = window.innerWidth - 60;
-canvas.height = 800;
+canvas.width = canvasImage.width;
+canvas.height = canvasImage.height;
 
 let context = canvas.getContext("2d");
 context.fillStyle = "white";
@@ -40,12 +41,15 @@ let index = -1;
 function start(event) {
     isDrawing = true;
     context.beginPath();
-    context.moveTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
+    context.moveTo(
+        event.clientX - canvasImage.getBoundingClientRect().left,
+        event.clientY - canvasImage.getBoundingClientRect().top
+    );
     event.preventDefault();
 }
 function draw(event) {
     if (isDrawing) {
-        context.lineTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
+        context.lineTo(event.clientX - canvasImage.getBoundingClientRect().left, event.clientY - canvasImage.getBoundingClientRect().top);
         context.strokeStyle = drawColor;
         context.lineWidth = drawWidth;
         context.lineJoin = "round";
