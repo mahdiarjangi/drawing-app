@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drawing App</title>
+</head>
+
+<body>
+    <div id="app">
+        <canvas id="canvas"></canvas>
+        <div class="tools">
+            <button id="undo" class="button">Undo</button>
+            <button id="create-image" class="button">Create Image</button>
+            <input id="draw-width-range" type="range" min="1" max="100">
+        </div>
+
+        <div class="result">
+            <img id="image-result" src="" alt="">
+        </div>
+    </div>
+
+    <script type="module" src="/main.js"></script>
+</body>
+
+</html>

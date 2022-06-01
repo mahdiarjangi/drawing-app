@@ -1,0 +1,29 @@
+body {
+    margin: 20px;
+    background-color: #222;
+}
+#canvas {
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+.tools {
+    display: flex;
+    justify-content: center;
+}
+.tools button {
+    cursor: pointer;
+    margin-right: 30px;
+}
+.result {
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+
+.result img {
+    width: 100%;
+    border-radius: 10px;
+}
