@@ -1,5 +1,3 @@
-import "./style.css";
-
 // * variables
 
 const canvas = document.getElementById("canvas");
